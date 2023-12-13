@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Tier Architecture Example</title>
+</head>
+<body>
+
+    <h1>Hello, World!</h1>
+
+    <form id="dataForm">
+        <label for="dataInput">Enter Data:</label>
+        <input type="text" id="dataInput" name="dataInput" required>
+        <button type="button" onclick="processData()">Process Data</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function processData() {
+            var inputData = document.getElementById("dataInput").value;
+
+            // Client-side business logic
+            var processedData = processClientSide(inputData);
+
+            // Display the result
+            document.getElementById("result").innerHTML = processedData;
+        }
+
+        function processClientSide(data) {
+            // Example of client-side business logic
+            return data.toUpperCase();
+        }
+    </script>
+
+</body>
+</html>
